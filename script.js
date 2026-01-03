@@ -63,3 +63,12 @@ vForm.addEventListener("submit", e => {
     vForm.reset();
   }
 });
+
+const donationCards = document.querySelectorAll(".donation-card");
+
+donationCards.forEach(card => {
+  card.addEventListener("click", () => {
+    donationCards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+});
