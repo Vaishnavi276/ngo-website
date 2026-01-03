@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shree Sai Avtar Bahuuddeshiya Sanstha</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { font-size: 20px; font-weight: bold; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-links a.active {
+  color: #f5b400;
+  border-bottom: 2px solid #f5b400;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.donate-btn {
+  background: #f56200;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #000;
+}
+
+/* ================= HERO SLIDESHOW ================= */
+.hero {
+  margin-top: 80px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.0s ease;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.active { opacity: 1; }
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.slide-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+}
+
+.slide-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.slide-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+
+.cta-btn {
+  padding: 12px 30px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Slide images (replace with real NGO images later) */
+.slide1 { background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b'); }
+.slide2 { background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5'); }
+.slide3 { background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d'); }
+
+/* Progress bar */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(255,255,255,.3);
+}
+
+.hero-progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #f5b400;
+  animation: progress 4s linear infinite;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ================= SECTIONS ================= */
+section { padding: 5rem 2rem; }
+
+.welcome {
+  text-align: center;
+}
+
+.welcome h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+.welcome p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ================= OUR WORK ================= */
+.our-work {
+  background: #f4f7fb;
+  text-align: center;
+}
+
+.our-work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.work-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  transition: transform .3s;
+}
+
+.work-card:hover { transform: translateY(-10px); }
+
+.work-card i {
+  font-size: 3rem;
+  color: #f5b400;
+  margin-bottom: 1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links.active { display: flex; }
+  .nav-right { display: none; }
+  .menu-toggle { display: flex; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Shree Sai Avtar Bahuuddeshiya Sanstha</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">HOME</a></li>
+     <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="#work">OUR WORK</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-instagram"></i>
+      <button class="donate-btn">DONATE</button>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SLIDESHOW -->
+<section class="hero" id="home">
+  <div class="slide slide1 active">
+    <div class="slide-content">
+      <h1>Education for Every Child</h1>
+      <p>Empowering communities through learning</p>
+      <a href="#" class="cta-btn">Support Education</a>
+    </div>
+  </div>
+
+  <div class="slide slide2">
+    <div class="slide-content">
+      <h1>Healthcare for All</h1>
+      <p>Accessible medical care for everyone</p>
+      <a href="#" class="cta-btn">Support Healthcare</a>
+    </div>
+  </div>
+
+  <div class="slide slide3">
+    <div class="slide-content">
+      <h1>Women Empowerment</h1>
+      <p>Creating opportunities and dignity</p>
+      <a href="#" class="cta-btn">Empower Women</a>
+    </div>
+  </div>
+
+  <div class="hero-progress"><span></span></div>
+</section>
+
+<!-- ABOUT -->
+<section class="welcome" id="about">
+  <h2>Welcome to Our NGO</h2>
+  <p>
+    At Shree Sai Avtar Bahuuddeshiya Sanstha, we believe that real change begins at the grassroots level. Our organization is dedicated to uplifting underprivileged communities by providing access to education, healthcare, livelihood opportunities, and social welfare programs.
+            With a strong commitment to transparency, compassion, and community participation, we work tirelessly to create a society where every individual can live with dignity, hope, and opportunity.
+
+  </p>
+  <p>
+    ✨ Together, we can build a better and more inclusive tomorrow.
+  </p>
+</section>
+
+<!-- OUR WORK -->
+<section class="our-work" id="work">
+    <div class="Our Mission">
+<div class="work-grid">
+
+    <div class="work-card"><i class="fas fa-book"></i><h3>Our Mission</h3><p>To empower individuals and communities through education, healthcare services, skill development, and social awareness programs, enabling them to become self-reliant and confident contributors to society.
+                </p></div>
+    <div class="work-card"><i class="fas fa-heartbeat"></i><h3>Our Vision</h3><p>A society where every individual regardless of background has equal access to education, health, and livelihood opportunities, leading to sustainable development and social harmony.
+            </p></div>
+    <div class="work-card"><i class="fas fa-hands-helping"></i><h3>Why We Exist</h3><p>Millions of people still struggle to access basic necessities like education, healthcare, and employment. At Shree Sai Avtar Bahuuddeshiya Sanstha, we exist to bridge this gap by reaching those who are often left behind.
+
+Every initiative we undertake is guided by empathy, integrity, and a strong belief that small efforts can create big impact.
+          </p></div>
+    <div class="work-card"><i class="fas fa-leaf"></i><h3>What We Do</h3><p>We support communities through education, healthcare, skill training, women and child welfare programs, livelihood development, and disaster relief to create lasting social impact.
+            </p></div>
+  </div>
+
+
+</section>
+
+
+
+<script>
+/* Mobile Menu */
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Sticky Active Nav */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    if (scrollY >= section.offsetTop - 120) {
+      current = section.id;
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+/* Slideshow */
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+const progress = document.querySelector(".hero-progress span");
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+  progress.style.animation = "none";
+  progress.offsetHeight;
+  progress.style.animation = "progress 4s linear infinite";
+}, 4000);
+</script>
+</body>
+</html>

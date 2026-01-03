@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Shree Sai Avtar Bahuuddeshiya Sanstha</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+
+/* ================= GLOBAL ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 42px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-links a.active {
+  color: #f5b400;
+  border-bottom: 2px solid #f5b400;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 6rem 2rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= ABOUT INTRO ================= */
+.about-hero {
+  background: linear-gradient(135deg, rgba(102,126,234,.85), rgba(118,75,162,.85)),
+              url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+/* ============ WHAT WE DO ============ */
+.what-we-do {
+  background: white;
+}
+
+.work-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+}
+
+.work-card {
+  background: linear-gradient(135deg, #f4f7fb, #eef1f7);
+  padding: 3rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.work-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.work-card i {
+  font-size: 3.2rem;
+  color: #f5b400;
+  margin-bottom: 1.2rem;
+  transition: transform 0.4s;
+}
+
+.work-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.work-card p {
+  color: #555;
+}
+
+.work-card:hover::before {
+  opacity: 0.95;
+}
+
+.work-card:hover {
+  transform: translateY(-15px);
+}
+
+.work-card:hover i,
+.work-card:hover h3,
+.work-card:hover p {
+  color: white;
+}
+
+.work-card:hover i {
+  transform: scale(1.15);
+}
+
+/* ============ LEADERSHIP ============ */
+.leadership {
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+}
+
+.team-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.team-card:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 25px 45px rgba(0,0,0,.25);
+}
+
+.team-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.team-card:hover img {
+  transform: scale(1.08);
+}
+
+.team-info {
+  padding: 1.8rem;
+  text-align: center;
+}
+
+.team-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.team-info span {
+  color: #667eea;
+  font-weight: bold;
+}
+
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+  animation: scaleIn .4s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="window.location.href='index.html'">
+      <img src="images/ngologo.png" alt="Logo">
+      Shree Sai Avtar Bahuuddeshiya Sanstha
+    </div>
+
+    <ul class="nav-links">
+        
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#" class="active">ABOUT US</a></li>
+      <li><a href="index.html#work">OUR WORK</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ABOUT INTRO -->
+<section class="about-hero fade-in">
+  <h1>About Our Organization</h1>
+  <p>
+    Shree Sai Avtar Bahuuddeshiya Sanstha, Katol (Nagpur) is a registered non-profit organization dedicated to the overall development of society. We work with commitment and compassion to support underprivileged and marginalized communities, focusing on education, health, and social welfare.
+
+Registered under the Society Registration Act, 1860 and recognized by NITI Aayog (NGO DARPAN), our Sanstha operates with transparency, accountability, and a strong commitment to sustainable social development.
+  </p>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="what-we-do fade-in">
+  <h2>What We Do</h2>
+  <div class="work-grid">
+    <div class="work-card"><i class="fas fa-book"></i><h3>Education</h3><p>We promote education among children, youth, and underprivileged communities by creating awareness about the importance of learning. Our Sanstha supports students through educational guidance, skill-development activities, and access to learning resources, with a special focus on rural and economically weaker sections of society.</p></div>
+    <div class="work-card"><i class="fas fa-heartbeat"></i><h3>Healthcare</h3><P>We work to improve community health by organizing health awareness programs, medical check-up camps, and blood donation drives. Our Sanstha focuses on preventive healthcare and supports underprivileged people by promoting hygiene, early diagnosis, and access to basic health services.</P></div>
+    <div class="work-card"><i class="fas fa-hands-helping"></i><h3>Social Welfare</h3><P>We work for the welfare of underprivileged and marginalized communities by providing social support, spreading awareness, and assisting the elderly, women, children, and differently-abled individuals. Our Sanstha strives to promote dignity, equality, and improved quality of life for all.</P></div>
+    <div class="work-card"><i class="fas fa-leaf"></i><h3>Environment</h3><P>We actively work towards environmental protection by promoting tree plantation, cleanliness drives, and awareness about conservation of natural resources. Our Sanstha encourages community participation to create a clean, green, and sustainable environment for future generations.</P></div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership fade-in">
+  <h2>Our Leadership</h2>
+  <div class="team-grid">
+    <div class="team-card" onclick="openModal('President Name','President of the organization')">
+      <img src="images/president.jpg">
+      <div class="team-info"><h3>President Name</h3><span>President</span></div>
+    </div>
+
+    <div class="team-card" onclick="openModal('Vice President Name','Vice President of the organization')">
+      <img src="images/vice-president.jpg">
+      <div class="team-info"><h3>Vice President Name</h3><span>Vice President</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Shree Sai Avtar Bahuuddeshiya Sanstha. All rights reserved.</p>
+</footer>
+
+<script>
+/* Scroll Animations */
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+faders.forEach(f => observer.observe(f));
+
+/* Modal */
+function openModal(title, text) {
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
