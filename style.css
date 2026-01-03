@@ -197,7 +197,7 @@ body {
 }
 
 .field small {
-  color: red;
+  color: rgb(8, 203, 237);
   font-size: .8rem;
 }
 
@@ -268,4 +268,61 @@ body {
   color: #eee;
   text-align: center;
   padding: 2rem;
+}
+
+/* ================= VOLUNTEER PAGE ================= */
+
+.volunteer-hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg,#ff9a00,#ff6a00);
+  color: white;
+}
+
+.why-volunteer {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.why-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  transition: transform .3s;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+}
+
+.why-card i {
+  font-size: 2.5rem;
+  color: #08bef1;
+  margin-bottom: 1rem;
+}
+
+.volunteer-form-section {
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  background: #f4f7fb;
+}
+
+.volunteer-form-card {
+  max-width: 550px;
+  width: 100%;
+  background: white;
+  padding: 3rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
 }

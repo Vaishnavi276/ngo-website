@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Involved | Shree Sai Avtar Bahuuddeshiya Sanstha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="volunteer-hero">
+  <h1 class="fade-down">Get Involved</h1>
+  <p class="fade-up">
+    Join hands with us and be a part of the change you wish to see in society.
+  </p>
+</section>
+
+<!-- ================= WHY VOLUNTEER ================= -->
+<section class="why-volunteer">
+  <h2 class="fade-up">Why Volunteer With Us?</h2>
+
+  <div class="why-grid fade-in">
+    <div class="why-card">
+      <i class="fas fa-hands-helping"></i>
+      <h3>Create Real Impact</h3>
+      <p>Work directly with communities and help transform lives.</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-users"></i>
+      <h3>Be Part of a Team</h3>
+      <p>Collaborate with passionate people working for social good.</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-heart"></i>
+      <h3>Grow Personally</h3>
+      <p>Gain experience, skills, and a sense of purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOLUNTEER FORM ================= -->
+<section class="volunteer-form-section">
+  <div class="volunteer-form-card fade-in">
+
+    <h2>Volunteer Registration</h2>
+
+    <form id="volunteerForm" novalidate>
+
+      <div class="field">
+        <input type="text" id="vname" required>
+        <label>Full Name</label>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <input type="email" id="vemail" required>
+        <label>Email Address</label>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <input type="tel" id="vphone" required>
+        <label>Phone Number</label>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <select id="interest" required>
+          <option value="">Select Area of Interest</option>
+          <option>Education</option>
+          <option>Healthcare</option>
+          <option>Women Empowerment</option>
+          <option>Environment</option>
+          <option>Social Welfare</option>
+        </select>
+        <small></small>
+      </div>
+
+      <div class="field textarea">
+        <textarea id="vmessage"></textarea>
+        <label>Why do you want to volunteer?</label>
+        <small></small>
+      </div>
+
+      <button type="submit" class="send-btn">Submit</button>
+      <p class="success-msg" id="volunteerSuccess"></p>
+
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <p>© 2025 Shree Sai Avtar Bahuuddeshiya Sanstha</p>
+  <p>Together, we can make a difference.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
