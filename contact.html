@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Shree Sai Avtar Bahuuddeshiya Sanstha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="window.location.href='index.html'">
+      <img src="images/ngologo.png" alt="Logo">
+      Shree Sai Avtar Bahuuddeshiya Sanstha
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="index.html#work">OUR WORK</a></li>
+      <li><a href="#" class="active">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-instagram"></i>
+      <button class="donate-btn">DONATE</button>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="contact-hero">
+  <h1 class="fade-down">Contact Us</h1>
+  <p class="fade-up">
+  Your voice matters to us.
+  </p>
+
+  <p class="fade-up">
+Every message we receive brings us one step closer to creating positive change. Whether you’re looking to contribute, collaborate, or learn more about our initiatives, we’re here to listen.
+  </p>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="contact-form-section">
+  <div class="contact-form-card fade-in">
+
+    <h2>Send Us a Message</h2>
+
+    <form id="contactForm" novalidate>
+
+      <div class="field">
+        <input type="text" id="name" required>
+        <label>Your Name</label>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <input type="email" id="email" required>
+        <label>Your Email</label>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <input type="tel" id="phone">
+        <label>Your Phone</label>
+        <small></small>
+      </div>
+
+      <div class="field textarea">
+        <textarea id="message" required></textarea>
+        <label>Your Message</label>
+        <small></small>
+      </div>
+
+      <button type="submit" class="send-btn">
+        <span>Send Message</span>
+      </button>
+
+      <p class="success-msg" id="successMsg"></p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= GET IN TOUCH (SEPARATE) ================= -->
+<section class="get-in-touch">
+  <h2 class="fade-up">Get in Touch</h2>
+
+  <div class="touch-grid fade-in">
+    <div class="touch-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>SHREE SAI AVARAT BAHUUDDESHIYA SANSTHA</p>
+<P>C/0 Amrut Dadaji Bhude
+Plot No. 296, Behind Bhude Nursing Home
+Professor Colony Saoner </P>
+<P>Tah. Saoner Dist. Nagpur</p>
+    </div>
+
+    <div class="touch-card">
+      <i class="fas fa-phone"></i>
+      <p>+91 9067620282</p>
+    </div>
+
+    <div class="touch-card">
+      <i class="fas fa-envelope"></i>
+      <p>shree.sai.avtar.bs.2011@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="touch-social">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fab fa-youtube"></i>
+    <i class="fab fa-instagram"></i>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <p>© 2025 Shree Sai Avtar Bahuuddeshiya Sanstha</p>
+  <p>Working towards education, healthcare & social welfare</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
