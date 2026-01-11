@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Involved | Shree Sai Avtar Bahuuddeshiya Sanstha</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved | Shree Sai Avtar Bahuuddeshiya Sanstha</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="nav-container">
+
+    <div class="logo" onclick="window.location.href='index.html'">
+      <img src="images/ngologo.png" alt="Logo">
+      Shree Sai Avtar Bahuuddeshiya Sanstha
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="volunteer.html" class="active">VOLUNTEER</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-instagram"></i>
+      <button class="donate-btn" onclick="window.location.href='donation.html'">DONATE</button>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+
+  </div>
+</nav>
 
 <!-- ================= HERO ================= -->
 <section class="volunteer-hero">
@@ -71,13 +102,23 @@
       </div>
 
       <div class="field">
-        <select id="interest" required>
+        <select id="vinterest" required>
           <option value="">Select Area of Interest</option>
           <option>Education</option>
           <option>Healthcare</option>
           <option>Women Empowerment</option>
           <option>Environment</option>
           <option>Social Welfare</option>
+        </select>
+        <small></small>
+      </div>
+
+      <div class="field">
+        <select id="vavailability" required>
+          <option value="">Availability</option>
+          <option>Weekends</option>
+          <option>Part Time</option>
+          <option>Full Time</option>
         </select>
         <small></small>
       </div>
@@ -97,10 +138,13 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="site-footer">
-  <p>© 2025 Shree Sai Avtar Bahuuddeshiya Sanstha</p>
+  <p>mailto:shree.sai.avtar.bs.2011@gmail.com</p>
   <p>Together, we can make a difference.</p>
 </footer>
 
 <script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
+<script type="module" src="volunteer-backend.js"></script>
+
 </body>
 </html>

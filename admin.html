@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | NGO</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.admin-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+  font-size: 2.5rem;
+}
+
+.data-section {
+  margin-bottom: 4rem;
+}
+
+.data-section h2 {
+  margin-bottom: 1rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.data-table th {
+  background: #667eea;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="admin-container">
+
+  <div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p>View contact messages and volunteer registrations</p>
+  </div>
+
+  <!-- CONTACT MESSAGES -->
+  <div class="data-section">
+    <h2>Contact Messages</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="contactData"></tbody>
+    </table>
+  </div>
+
+  <!-- VOLUNTEERS -->
+  <div class="data-section">
+    <h2>Volunteer Registrations</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Interest</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody id="volunteerData"></tbody>
+    </table>
+  </div>
+  
+<button id="logoutBtn">Logout</button>
+
+<script type="module">
+import { auth } from "./firebase.js";
+import { signOut } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+document.getElementById("logoutBtn").onclick = () => {
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+};
+</script>
+
+<button onclick="showContacts()">Contacts</button>
+<button onclick="showVolunteers()">Volunteers</button>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="admin-backend.js"></script>
+<script type="module" src="admin-auth.js"></script>
+
+</body>
+</html>

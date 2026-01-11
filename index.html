@@ -35,7 +35,18 @@ body {
   align-items: center;
 }
 
-.logo { font-size: 20px; font-weight: bold; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 42px;
+}
 
 .nav-links {
   display: flex;
@@ -139,10 +150,18 @@ body {
   font-weight: bold;
 }
 
-/* Slide images (replace with real NGO images later) */
-.slide1 { background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b'); }
-.slide2 { background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5'); }
-.slide3 { background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d'); }
+
+.slide1 {
+  background-image: url("images/education.jpg");
+}
+
+.slide2 {
+  background-image: url("images/women_empowerment.jpg");
+}
+
+.slide3 {
+  background-image: url("images/education.jpg");
+}
 
 /* Progress bar */
 .hero-progress {
@@ -239,9 +258,14 @@ section { padding: 5rem 2rem; }
 <body>
 
 <!-- NAVBAR -->
+ 
 <nav class="navbar">
   <div class="nav-container">
-    <div class="logo">Shree Sai Avtar Bahuuddeshiya Sanstha</div>
+    <div class="logo" onclick="window.location.href='index.html'">
+      <img src="images/ngologo.png" alt="Logo">
+      Shree Sai Avtar Bahuuddeshiya Sanstha
+    </div>
+
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">HOME</a></li>
@@ -255,7 +279,10 @@ section { padding: 5rem 2rem; }
       <i class="fab fa-linkedin-in"></i>
       <i class="fab fa-youtube"></i>
       <i class="fab fa-instagram"></i>
-      <button class="donate-btn">DONATE</button>
+<button class="donate-btn" onclick="window.location.href='donation.html'">
+  DONATE
+</button>
+
     </div>
 
     <div class="menu-toggle" onclick="toggleMenu()">
