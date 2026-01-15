@@ -15,5 +15,6 @@ apiKey: "AIzaSyCH356LR4_Gv2tWCux33tT8pxf80JCA1y8",
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+
 export const auth = getAuth(app);
 
