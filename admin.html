@@ -115,9 +115,55 @@ document.getElementById("logoutBtn").onclick = () => {
 
 </div>
 
+<h2>📊 Donation Analytics</h2>
+
+<div style="display:flex; gap:20px; margin-bottom:30px; flex-wrap:wrap;">
+
+  <div class="stat-box">
+    <h3>Total Amount</h3>
+    <p id="totalAmount">₹0</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>Total Donations</h3>
+    <p id="totalCount">0</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>Today</h3>
+    <p id="todayAmount">₹0</p>
+  </div>
+
+  <div class="stat-box">
+    <h3>Last 7 Days</h3>
+    <p id="weekAmount">₹0</p>
+  </div>
+
+</div>
+
+
+<h2>💰 Donation Records</h2>
+
+<table border="1" width="100%" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Amount (₹)</th>
+      <th>Payment ID</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody id="donationTableBody">
+    <!-- Data will load here -->
+  </tbody>
+</table>
+
 <script type="module" src="firebase.js"></script>
 <script type="module" src="admin-backend.js"></script>
 <script type="module" src="admin-auth.js"></script>
+<script type="module" src="admin-donations.js"></script>
 
 </body>
 </html>
